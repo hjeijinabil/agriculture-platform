@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ReviewFeedback" />
+        <module name="maillerService" />
         <module name="Farm-Management" />
         <module name="Notification" />
         <module name="Consulation-Management" />
@@ -19,6 +20,7 @@
       <module name="Farm-Management" options="-parameters" />
       <module name="Notification" options="-parameters" />
       <module name="ReviewFeedback" options="-parameters" />
+      <module name="maillerService" options="-parameters" />
     </option>
   </component>
 </project>
