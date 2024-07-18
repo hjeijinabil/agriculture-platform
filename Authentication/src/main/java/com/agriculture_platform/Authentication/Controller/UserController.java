@@ -8,6 +8,7 @@ import com.agriculture_platform.Authentication.Service.CustomUserDetailsService;
 import com.agriculture_platform.Authentication.Service.JwtService;
 import com.agriculture_platform.Authentication.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
@@ -44,7 +45,17 @@ public class UserController {
 
     @PostMapping("/registration")
     public ResponseEntity<String> saveUser(@RequestBody UserDto userDto) {
+        // Check if the email already exists
+        if (userRepository.existsByEmail(userDto.getEmail())) {
+            // Return ResponseEntity with a conflict status and message
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("Email already exists in the database");
+        }
+
+        // Save the user if email doesn't exist
         userService.save(userDto);
+
+        // Return ResponseEntity with OK status and success message
         return ResponseEntity.ok("Registered Successfully!");
     }
     @PostMapping("/login")
