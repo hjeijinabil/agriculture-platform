@@ -12,9 +12,17 @@ public class Feedback {
     private Long id;
     private String userType;
     private Long userId;
-    private Long consultantId;
+    private Long consultationId;
     private int rating;
     private String comments;
+
+    public Long getConsultationId() {
+        return consultationId;
+    }
+
+    public void setConsultationId(Long consultationId) {
+        this.consultationId = consultationId;
+    }
 
     public int getRating() {
         return rating;
@@ -44,9 +52,7 @@ public class Feedback {
         return comments;
     }
 
-    public Long getConsultantId() {
-        return consultantId;
-    }
+
 
     public Long getId() {
         return id;
@@ -56,9 +62,7 @@ public class Feedback {
         this.id = id;
     }
 
-    public void setConsultantId(Long consultantId) {
-        this.consultantId = consultantId;
-    }
+
 
     public void setComments(String comments) {
         this.comments = comments;

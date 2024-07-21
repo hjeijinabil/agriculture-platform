@@ -19,8 +19,8 @@ public class NotificationController {
     @Autowired
     private NotificationService notificationService;
 
-    @PostMapping
-    public ResponseEntity<Notification> sendNotification(@RequestParam String userId, @RequestParam String message) {
+    @PostMapping("{userId}")
+    public ResponseEntity<Notification> sendNotification(@PathVariable String userId, @RequestBody String message) {
         return ResponseEntity.ok(notificationService.sendNotification(userId, message));
     }
 

@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="faf8cdf8-b548-49a2-b819-0c7c22eb6df9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/CustomAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/CustomAuthenticationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/CustomLogoutSuccessHandle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/JwtAuthentificationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/JwtAuthentificationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/JwtLocalStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Controller/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Entity/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Entity/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Repository/FeedbackRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Service/FeedbackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maillerService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/maillerService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +124,10 @@
       <updated>1721088453046</updated>
       <workItem from="1721088454314" duration="4802000" />
       <workItem from="1721148575214" duration="12140000" />
-      <workItem from="1721315054657" duration="10400000" />
+      <workItem from="1721315054657" duration="10701000" />
+      <workItem from="1721342377917" duration="4596000" />
+      <workItem from="1721417128747" duration="1064000" />
+      <workItem from="1721491085858" duration="5531000" />
     </task>
     <servers />
   </component>

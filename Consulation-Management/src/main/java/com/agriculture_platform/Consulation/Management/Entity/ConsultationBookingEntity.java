@@ -19,10 +19,31 @@ public class ConsultationBookingEntity {
     private boolean accepted;
 
     private User consultant; // Consultant selected for the consultation
+     private double AvergadeRating;
 
+
+    public int getNumberOfReviews() {
+        return numberOfReviews;
+    }
+
+    public void setNumberOfReviews(int numberOfReviews) {
+        this.numberOfReviews = numberOfReviews;
+    }
+
+
+    public double getAvergadeRating() {
+        return AvergadeRating;
+    }
+
+    public void setAvergadeRating(double avergadeRating) {
+        AvergadeRating = avergadeRating;
+    }
+
+    private int numberOfReviews;
     public boolean isAccepted() {
         return accepted;
     }
+
 
     public void setAccepted(boolean accepted) {
         this.accepted = accepted;

@@ -55,7 +55,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         data.put("sexe", user.get().getSex());
         data.put("email", user.get().getEmail());
         String jwtToken = jwtService.generateToken(data,userDetails);
-        JwtLocalStorage.setJwt(jwtToken);
         System.out.println("jwt = " + jwtToken);
         return new UsernamePasswordAuthenticationToken(username, jwtToken, userDetails.getAuthorities());
     }

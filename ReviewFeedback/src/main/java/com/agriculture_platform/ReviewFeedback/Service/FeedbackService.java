@@ -2,6 +2,7 @@ package com.agriculture_platform.ReviewFeedback.Service;
 
 import com.agriculture_platform.ReviewFeedback.Entity.Feedback;
 import com.agriculture_platform.ReviewFeedback.Repository.FeedbackRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +38,16 @@ public class FeedbackService {
     public void deleteFeedback(Long id) {
         feedbackRepository.deleteById(id);
     }
+//    @Transactional
+//    public void calculateAverageRating(Long consultationId) {
+//        double averageRating = FeedbackRepository.findAverageRatingByConsultationId(consultationId);
+//        int numOfReviews = feedbackRepository.countReviewsByConsultationId(consultationId);
+//
+//        ConsultationRepository.findById(consultationId).ifPresent(user -> {
+//            user.setAverageRating(Math.ceil(averageRating));
+//            user.setNumOfReviews(numOfReviews);
+//            userRepository.save(user);
+//        });
+//    }
+
 }
