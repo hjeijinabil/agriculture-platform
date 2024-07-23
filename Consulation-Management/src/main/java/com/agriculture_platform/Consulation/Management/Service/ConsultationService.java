@@ -12,4 +12,5 @@ public interface ConsultationService {
     List<ConsultationDto> findConsultationsByMentorId(String mentorId);
     void acceptConsultation(String consultationId);
     void rejectConsultation(String consultationId);
+    ConsultationDto getByIdConsultation(String consultationId);
 }

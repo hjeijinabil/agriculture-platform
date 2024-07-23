@@ -5,4 +5,5 @@ import com.agriculture_platform.Authentication.Entity.User;
 
 public interface UserService {
     User save (UserDto userDto);
+     User getUserByUsername(String username);
 }

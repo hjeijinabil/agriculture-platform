@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/notification")
+@RequestMapping("/notifications")
 @RestController
 public class NotificationStorageController {
 

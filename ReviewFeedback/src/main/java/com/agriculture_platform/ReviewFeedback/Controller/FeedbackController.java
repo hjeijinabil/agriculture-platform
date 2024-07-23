@@ -34,8 +34,5 @@ public class FeedbackController {
         return feedbackService.updateFeedback(id, feedback);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteFeedback(@PathVariable Long id) {
-        feedbackService.deleteFeedback(id);
-    }
+
 }

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FeedbackRepository extends JpaRepository<Feedback,Long> {
-    @Query("SELECT COALESCE(AVG(r.rating), 0) FROM Feedback r WHERE r.consultation.id = :consultationId")
-    double findAverageRatingByconsultationId(@Param("consultationId") Long consultationId);
+//    @Query("SELECT COALESCE(AVG(r.rating), 0) FROM Feedback r WHERE r.consultation.id = :consultationId")
+//    double findAverageRatingByconsultationId(@Param("consultationId") Long consultationId);
 
-    @Query("SELECT COUNT(r) FROM Feedback r WHERE r.consultation.id = :consultationId")
-    int countReviewsByConsultationId(@Param("consultationId") Long consultationId);
+//    @Query("SELECT COUNT(r) FROM Feedback r WHERE r.consultation.id = :consultationId")
+//    int countReviewsByConsultationId(@Param("consultationId") Long consultationId);
 
 }

@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/users")
 public class UserController {
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -36,6 +36,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
 
     @Autowired
     private JwtService jwtService;
@@ -111,7 +112,10 @@ public class UserController {
         return ResponseEntity.ok(userDto1);
     }
 
-
+    @GetMapping("/{username}")
+    public ResponseEntity getUserByUsername(@PathVariable String username) {
+        return ResponseEntity.ok(userService.getUserByUsername(username));
+    }
 }
 
 

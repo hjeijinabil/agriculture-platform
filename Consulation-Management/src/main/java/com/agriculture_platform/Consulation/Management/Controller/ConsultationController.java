@@ -12,11 +12,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api/bookings")
+@RequestMapping("/consultations")
 public class ConsultationController {
     @Autowired
     private ConsultationService consultationService;
-
+    @GetMapping("/{consultationId}")
+    public ResponseEntity<ConsultationDto> getByIdConsultation(@PathVariable String consultationId) {
+        ConsultationDto consultation = consultationService.getByIdConsultation(consultationId);
+        return new ResponseEntity<>(consultation, HttpStatus.OK);
+    }
     @PostMapping("/book")
     public ResponseEntity<ConsultationDto> bookConsultation(@RequestBody ConsultationDto consultationDTO) {
         ConsultationDto bookedConsultation = consultationService.bookConsultation(consultationDTO);
