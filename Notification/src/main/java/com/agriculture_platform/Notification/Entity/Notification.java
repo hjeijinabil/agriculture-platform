@@ -1,58 +1,29 @@
 package com.agriculture_platform.Notification.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import org.antlr.v4.runtime.misc.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
-
-@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Document(collection = "notifications")
 public class Notification {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
+    private String content;
 
-    private String userId;
+    // Add the userToId field if you need it for your queries
+    private String userToId;
 
+    private NotificationType notificationType;
 
-    private String message;
-
-    public String getMessage() {
-        return message;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @NotNull
-    private LocalDateTime timestamp;
-
+    private boolean delivered;
+    private boolean read;
 }

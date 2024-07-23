@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faf8cdf8-b548-49a2-b819-0c7c22eb6df9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/CustomAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/CustomAuthenticationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/CustomLogoutSuccessHandle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/JwtAuthentificationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/JwtAuthentificationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/JwtLocalStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Controller/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Entity/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Entity/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Repository/FeedbackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/Service/FeedbackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/AuthenticationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/AuthenticationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/ConsulationManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/ConsulationManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Farm-Management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Farm-Management/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Farm-Management/src/main/java/com/agriculture_platform/Farm/Management/FarmManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Farm-Management/src/main/java/com/agriculture_platform/Farm/Management/FarmManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Farm-Management/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Farm-Management/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Controller/NotificationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Entity/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/NotificationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/NotificationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Repository/NotificationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Repository/NotificationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/Service/NotificationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReviewFeedback/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/ReviewFeedbackApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/ReviewFeedbackApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maillerService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/maillerService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maillerService/src/main/java/com/Mailler/maillerService/MaillerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/maillerService/src/main/java/com/Mailler/maillerService/MaillerServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maillerService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/maillerService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +71,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ProjetSpring-main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/agriculture-platform/EurekaServer&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -66,7 +81,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.AuthenticationApplication">
+  <component name="RunManager" selected="Spring Boot.NotificationApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ApiGateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.agriculture_plateform.ApiGateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthenticationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Authentication" />
@@ -79,6 +101,13 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Consulation-Management" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.agriculture_platform.Consulation.Management.ConsulationManagementApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="EurekaServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.agriculture_plateform.EurekaServer.EurekaServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,6 +157,10 @@
       <workItem from="1721342377917" duration="4596000" />
       <workItem from="1721417128747" duration="1064000" />
       <workItem from="1721491085858" duration="5531000" />
+      <workItem from="1721598130328" duration="2566000" />
+      <workItem from="1721617147835" duration="1004000" />
+      <workItem from="1721687309211" duration="4342000" />
+      <workItem from="1721695806317" duration="4728000" />
     </task>
     <servers />
   </component>

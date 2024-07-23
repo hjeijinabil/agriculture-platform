@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/Farm-Management/pom.xml" />
         <option value="$PROJECT_DIR$/Consulation-Management/pom.xml" />
         <option value="$PROJECT_DIR$/Authentication/pom.xml" />
+        <option value="$PROJECT_DIR$/ApiGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/EurekaServer/pom.xml" />
       </list>
     </option>
   </component>

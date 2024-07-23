@@ -7,19 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="EurekaServer" />
+        <module name="Consulation-Management" />
+        <module name="Authentication" />
         <module name="ReviewFeedback" />
         <module name="maillerService" />
         <module name="Farm-Management" />
         <module name="Notification" />
-        <module name="Consulation-Management" />
-        <module name="Authentication" />
+        <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
       <module name="Authentication" options="-parameters" />
       <module name="Consulation-Management" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
       <module name="Farm-Management" options="-parameters" />
       <module name="Notification" options="-parameters" />
       <module name="ReviewFeedback" options="-parameters" />
