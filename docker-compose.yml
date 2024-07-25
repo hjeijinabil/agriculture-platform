@@ -1,0 +1,158 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    image: eureka-server:latest
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_APPLICATION_NAME=eureka-server
+      - EUREKA_CLIENT_REGISTER_WITH_EUREKA=false
+      - EUREKA_CLIENT_FETCH_REGISTRY=false
+    networks:
+      - my-network
+
+  user-service:
+    image: user-service:latest
+    container_name: user-service
+    ports:
+      - "8081:8080"
+    environment:
+      - SPRING_APPLICATION_NAME=user-service
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo-db:27017/user-service-db
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/Authentication?createDatabaseIfNotExist=true&useSSL=false&ServerTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+    depends_on:
+      - eureka-server
+      - mongo-db
+      - mysql-db
+    networks:
+      - my-network
+
+  consultation-service:
+    image: consultation-service:latest
+    container_name: consultation-service
+    ports:
+      - "8082:8080"
+    environment:
+      - SPRING_APPLICATION_NAME=consultation-service
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo-db:27017/consultation-service-db
+    depends_on:
+      - eureka-server
+      - mongo-db
+    networks:
+      - my-network
+
+  notification-service:
+    image: notification-service:latest
+    container_name: notification-service
+    ports:
+      - "8083:8080"
+    environment:
+      - SPRING_APPLICATION_NAME=notification-service
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo-db:27017/notification-service-db
+    depends_on:
+      - eureka-server
+      - mongo-db
+    networks:
+      - my-network
+
+  feedback-like-service:
+    image: feedback-like-service:latest
+    container_name: feedback-like-service
+    ports:
+      - "8084:8080"
+    environment:
+      - SPRING_APPLICATION_NAME=feedback-like-service
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/ReviewFeedback?createDatabaseIfNotExist=true&useSSL=false&ServerTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+    depends_on:
+      - eureka-server
+      - mysql-db
+    networks:
+      - my-network
+
+  mailler-service:
+    image: mailler-service:latest
+    container_name: mailler-service
+    ports:
+      - "8085:8080"
+    environment:
+      - SPRING_APPLICATION_NAME=mailler-service
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/Mailler?createDatabaseIfNotExist=true&useSSL=false&ServerTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+      - SPRING_MAIL_HOST=smtp.gmail.com
+      - SPRING_MAIL_PORT=587
+      - SPRING_MAIL_USERNAME=hjeijinabil22@gmail.com
+      - SPRING_MAIL_PASSWORD=xues efmx iwym ikon
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH=true
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=true
+    depends_on:
+      - eureka-server
+      - mysql-db
+    networks:
+      - my-network
+
+  farm-management:
+    image: farm-management:latest
+    container_name: farm-management
+    ports:
+      - "8086:8080"
+    environment:
+      - SPRING_APPLICATION_NAME=farm-management
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/farm-management?createDatabaseIfNotExist=true&useSSL=false&ServerTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+    depends_on:
+      - eureka-server
+      - mysql-db
+    networks:
+      - my-network
+
+  gateway:
+    image: gateway:latest
+    container_name: gateway
+    ports:
+      - "8087:8080"
+    environment:
+      - SPRING_APPLICATION_NAME=gateway
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+    networks:
+      - my-network
+
+  mongo-db:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: farm-management-db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

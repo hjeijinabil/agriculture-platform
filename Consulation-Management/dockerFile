@@ -1,0 +1,4 @@
+# Dockerfile pour consultation-service
+FROM openjdk:17-jdk-slim
+COPY target/consultation-service.jar /app/consultation-service.jar
+ENTRYPOINT ["java", "-jar", "/app/consultation-service.jar"]

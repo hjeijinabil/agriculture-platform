@@ -1,0 +1,4 @@
+# Dockerfile pour feedback-like-service
+FROM openjdk:17-jdk-slim
+COPY target/feedback-like-service.jar /app/feedback-like-service.jar
+ENTRYPOINT ["java", "-jar", "/app/feedback-like-service.jar"]

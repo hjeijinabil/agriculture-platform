@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faf8cdf8-b548-49a2-b819-0c7c22eb6df9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/CommentServiceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/AuthenticationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/AuthenticationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/ConsulationManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/ConsulationManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Controller/ConsultationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Controller/ConsultationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/ConsultationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/ConsultationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Repository/ConsultationBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Repository/ConsultationBookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Farm-Management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Farm-Management/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Farm-Management/src/main/java/com/agriculture_platform/Farm/Management/FarmManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Farm-Management/src/main/java/com/agriculture_platform/Farm/Management/FarmManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notification/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/NotificationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/src/main/java/com/agriculture_platform/Notification/NotificationApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +146,7 @@
       <workItem from="1721687309211" duration="4342000" />
       <workItem from="1721695806317" duration="11255000" />
       <workItem from="1721707612745" duration="5785000" />
-      <workItem from="1721868608189" duration="12433000" />
+      <workItem from="1721868608189" duration="14529000" />
     </task>
     <servers />
   </component>

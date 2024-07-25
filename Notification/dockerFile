@@ -1,0 +1,4 @@
+# Dockerfile pour notification-service
+FROM openjdk:17-jdk-slim
+COPY target/notification-service.jar /app/notification-service.jar
+ENTRYPOINT ["java", "-jar", "/app/notification-service.jar"]

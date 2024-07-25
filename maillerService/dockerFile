@@ -1,0 +1,4 @@
+# Dockerfile pour mailler-service
+FROM openjdk:17-jdk-slim
+COPY target/mailler-service.jar /app/mailler-service.jar
+ENTRYPOINT ["java", "-jar", "/app/mailler-service.jar"]
