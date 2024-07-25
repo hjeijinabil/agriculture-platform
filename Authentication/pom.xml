@@ -55,6 +55,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.31</version> <!-- Ensure this version is correct -->
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

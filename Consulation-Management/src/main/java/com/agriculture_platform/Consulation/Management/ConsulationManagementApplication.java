@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableEurekaServer
+@EnableFeignClients
 public class ConsulationManagementApplication {
 
 	public static void main(String[] args) {

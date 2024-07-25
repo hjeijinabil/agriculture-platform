@@ -1,13 +1,27 @@
 package com.agriculture_platform.Consulation.Management.Dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
-@Service
+@AllArgsConstructor
+@Getter
+@Setter
 public class UserDto {
-    private String id;
+    @Id
+
+    private Long id;
+
     private String username;
+    private String password;
+    private String age;
+    private String sex;
     private String email;
-    private Set<String> roles; // Roles of the user
+    private UserDto User;
+    private String Roles;
+
 
 }

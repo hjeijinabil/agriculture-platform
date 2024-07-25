@@ -11,8 +11,6 @@ import java.util.Optional;
 
 @Repository
 public interface ConsultationBookingRepository extends MongoRepository<ConsultationBookingEntity, String> {
-    List<ConsultationBookingEntity> findByMentorIdAndAccepted(String mentorId, boolean accepted);
-    List<ConsultationBookingEntity> findConsultationById(String id);
-    ConsultationDto getByIdConsultation(String consultationId);
+//    List<ConsultationBookingEntity> findByMentorIdAndAccepted(String mentorId, boolean accepted);
 
 }
