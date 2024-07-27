@@ -9,10 +9,15 @@ import com.agriculture_platform.Consulation.Management.Repository.ConsultationBo
 import com.agriculture_platform.Consulation.Management.request.FeedbackRequest;
 import com.agriculture_platform.Consulation.Management.request.NotificationRequest;
 import com.agriculture_platform.Consulation.Management.request.NotificationType;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Schedulers;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +25,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class ConsultationServiceImpl implements ConsultationService{
     @Autowired
     private ConsultationBookingRepository consultationRepository;
@@ -60,27 +66,30 @@ private CommentServiceClient commentServiceClient;
         // 3. Create and set feedback object
         FeedbackDto feedbackDto = feedbackRequest.getFeedback();
         feedbackDto.setUser(feedbackUser);
-
+        feedbackRequest.setComments(feedbackRequest.getFeedback().getComments());
+        feedbackRequest.setRating(feedbackRequest.getFeedback().getRating());
+feedbackRequest.setUserId(feedbackRequest.getUser().getId());
+        FeedbackDto feedback =  commentServiceClient.addFeedback(feedbackRequest);
         // Add the feedback to the consultation
         consultationEntity.getFeedback().add(modelMapper.map(feedbackDto, FeedbackDto.class));
 
         // 4. Notify the consultation owner
-        UserDto consultationOwner = userServiceClient.getUserByUsername(consultationEntity.getUser().getUsername());
-        NotificationRequest notificationRequest = new NotificationRequest(
-                false,
-                "New feedback from " + feedbackUser.getUsername(),
-                NotificationType.COMMENT,
-                feedbackUser,
-                consultationOwner
-        );
+//        UserDto consultationOwner = userServiceClient.getUserByUsername(consultationEntity.getUser().getUsername());
+//        NotificationRequest notificationRequest = new NotificationRequest(
+//                false,
+//                "New feedback from " + feedbackUser.getUsername(),
+//                NotificationType.COMMENT,
+//                feedbackUser,
+//                consultationOwner
+//        );
 
-        notificationServiceClient.createNotification(notificationRequest);
-
-        // 5. Save the updated consultation
-        consultationRepository.save(consultationEntity);
-
-        // Convert updated entity to DTO and return
-        return modelMapper.map(consultationEntity, ConsultationDto.class);
+//        notificationServiceClient.createNotification(notificationRequest);
+//
+//        // 5. Save the updated consultation
+      consultationRepository.save(consultationEntity);
+//
+//        // Convert updated entity to DTO and return
+     return modelMapper.map(consultationEntity, ConsultationDto.class);
     }
     @Override
     public ConsultationDto removeFeedback(FeedbackRequest feedbackRequest) {
@@ -136,9 +145,9 @@ private CommentServiceClient commentServiceClient;
         consultation.setConsultant(consultant);
         consultation.setMentor(mentor);
         */
-
         // Save consultation entity in the database using ConsultationRepository
         consultation = consultationRepository.save(consultation);
+        System.out.println(consultation);
 
         // Map ConsultationBookingEntity back to ConsultationDto and return it
         return modelMapper.map(consultation, ConsultationDto.class);
@@ -172,24 +181,17 @@ private CommentServiceClient commentServiceClient;
     public void rejectConsultation(String consultationId) {
         consultationRepository.deleteById(consultationId);
     }
+@Override
+    public List<ConsultationBookingEntity> getAll() {
+        return consultationRepository.findAll();
+    }
+@Override
+    public Flux<ServerSentEvent<List<ConsultationBookingEntity>>> streamConsultations() {
+        return Flux.interval(Duration.ofSeconds(2))
+                .publishOn(Schedulers.boundedElastic())
+                .map(sequence -> ServerSentEvent.<List<ConsultationBookingEntity>>builder().id(String.valueOf(sequence))
+                        .event("consultation-list-event").data(getAll())
+                        .build());
 
-
-//    public ConsultationDto addFeeback(FeedbackRequest feedbackRequest) {
-//        ConsultationBookingEntity consultationDto = getConsultationByID(feedbackRequest.getConsultation().getI);
-//        F = commentRequest.getComment();
-//        // it's checking users at the same time
-//        User commentUser = userService.getUserByUsername(comment.getUser().getUsername());
-//        comment.setUser(commentUser);
-//        comment.setId(new ObjectId().toString());
-//        User postUser = userService.getUserByUsername(post.getUser().getUsername());
-//        post.setUser(postUser);
-//        post.getComments().add(comment);
-//        notificationStorageService.createNotificationStorage(Notification.builder()
-//                .delivered(false)
-//                .content("new comment from " + commentUser.getUsername())
-//                .notificationType(NotificationType.COMMENT)
-//                .userFrom(commentUser)
-//                .userTo(postUser).build());
-//        return postRepository.save(post);
-//    }
+    }
 }

@@ -42,9 +42,11 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(request -> request
 
-                        .requestMatchers("/api/auth/login").permitAll()
-                        .requestMatchers("/api/auth/registration").permitAll()
-                        .anyRequest().authenticated())
+                        .requestMatchers("/users/login").permitAll()
+                        .requestMatchers("users/registration").permitAll()
+                        .requestMatchers("/users/username/**").permitAll()
+                        .anyRequest().authenticated()
+                 )// Adjust as needed
 
 
                 // configure session management

@@ -9,8 +9,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -33,9 +35,11 @@ public class ConsultationController {
             return new ResponseEntity<>(consultationDto, HttpStatus.CREATED);
         } catch (Exception e) {
             // Gérez les exceptions spécifiques et les erreurs ici
+            System.out.println(e);
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+
     @PostMapping("/feedback")
     public ResponseEntity<ConsultationDto> addFeedback(@RequestBody FeedbackRequest feedbackRequest) {
         try {
@@ -44,6 +48,7 @@ public class ConsultationController {
         } catch (ResourceNotFoundException ex) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         } catch (Exception ex) {
+            System.out.println(ex);
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -58,6 +63,16 @@ public class ConsultationController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+    @GetMapping("/stream")
+    public Flux<ServerSentEvent<List<ConsultationBookingEntity>>> streamConsultation() {
+        return consultationService.streamConsultations();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ConsultationBookingEntity>> getAllPosts() {
+        return ResponseEntity.ok(consultationService.getAll());
+    }
+
 
     @PostMapping("/book")
     public ResponseEntity<ConsultationDto> bookConsultation(@RequestBody ConsultationDto consultationDTO) {

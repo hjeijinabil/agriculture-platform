@@ -1,4 +1,0 @@
-# Dockerfile pour eureka-server
-FROM openjdk:17-jdk-slim
-COPY target/eureka-server.jar /app/eureka-server.jar
-ENTRYPOINT ["java", "-jar", "/app/eureka-server.jar"]

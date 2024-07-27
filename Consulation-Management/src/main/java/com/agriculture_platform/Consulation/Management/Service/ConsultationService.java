@@ -4,6 +4,8 @@ import com.agriculture_platform.Consulation.Management.Dto.ConsultationDto;
 import com.agriculture_platform.Consulation.Management.Dto.FeedbackDto;
 import com.agriculture_platform.Consulation.Management.Entity.ConsultationBookingEntity;
 import com.agriculture_platform.Consulation.Management.request.FeedbackRequest;
+import org.springframework.http.codec.ServerSentEvent;
+import reactor.core.publisher.Flux;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,4 +19,6 @@ public interface ConsultationService {
     //    List<ConsultationDto> findConsultationsByMentorId(String mentorId);
     void acceptConsultation(String consultationId);
     void rejectConsultation(String consultationId);
+    Flux<ServerSentEvent<List<ConsultationBookingEntity>>> streamConsultations();
+    List<ConsultationBookingEntity> getAll();
 }

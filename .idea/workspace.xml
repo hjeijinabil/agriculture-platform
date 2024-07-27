@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faf8cdf8-b548-49a2-b819-0c7c22eb6df9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/AuthenticationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/AuthenticationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/com/agriculture_platform/Authentication/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/dockerFile" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Controller/ConsultationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Controller/ConsultationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/ConsultationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/ConsultationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/FeedbackDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Dto/FeedbackDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Entity/ConsultationBookingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Repository/ConsultationBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Repository/ConsultationBookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/Service/ConsultationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/request/FeedbackRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management/request/FeedbackRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consulation-Management/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Consulation-Management/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/dockerFile" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Farm-Management/dockerFile" beforeDir="false" afterPath="$PROJECT_DIR$/Farm-Management/DockerFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Farm-Management/src/main/java/com/agriculture_platform/Farm/Management/Repository/CropRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Farm-Management/src/main/java/com/agriculture_platform/Farm/Management/Repository/CropRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/request/FeedbackRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewFeedback/src/main/java/com/agriculture_platform/ReviewFeedback/request/FeedbackRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maillerService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/maillerService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +70,15 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/agriculture-platform/Consulation-Management/src/main/java/com/agriculture_platform/Consulation/Management",
+    "last_opened_file_path": "C:/agriculture-platform/Authentication",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "application.passwordSafe",
     "vue.rearranger.settings.migration": "true"
   }
@@ -65,7 +92,7 @@
       <recent name="C:\agriculture-platform\ReviewFeedback\src\main\java\com\agriculture_platform\ReviewFeedback" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConsulationManagementApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ApiGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.agriculture_plateform.ApiGateway.ApiGatewayApplication" />
@@ -90,7 +117,7 @@
       </method>
     </configuration>
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="EurekaServer" />
+      <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.agriculture_plateform.EurekaServer.EurekaServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,7 +173,8 @@
       <workItem from="1721687309211" duration="4342000" />
       <workItem from="1721695806317" duration="11255000" />
       <workItem from="1721707612745" duration="5785000" />
-      <workItem from="1721868608189" duration="14529000" />
+      <workItem from="1721868608189" duration="18315000" />
+      <workItem from="1721946855694" duration="20085000" />
     </task>
     <servers />
   </component>

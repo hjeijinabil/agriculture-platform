@@ -16,8 +16,13 @@ public class FeedbackRequest {
 private  String id;
     private String consultationId;
     private ConsultationDto consultation ;
-    private FeedbackDto feedback;
+    private int rating;
+    private String comments;
     private UserDto user;
+    private String userType;
+    private FeedbackDto feedback;
+    private Long userId;
+
 
 
 }

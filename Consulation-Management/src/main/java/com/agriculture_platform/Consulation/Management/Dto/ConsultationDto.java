@@ -2,8 +2,8 @@ package com.agriculture_platform.Consulation.Management.Dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,8 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class ConsultationDto {
-    private Long id;
+    private String id;
 
     private boolean accepted;
     private String consultationId;

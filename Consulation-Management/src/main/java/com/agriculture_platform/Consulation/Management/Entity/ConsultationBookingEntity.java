@@ -31,4 +31,8 @@ public class ConsultationBookingEntity {
     private List<FeedbackDto> feedback;
     private LocalDateTime created;
     private String postImageUrl;
+
+    public ConsultationBookingEntity() {
+
+    }
 }

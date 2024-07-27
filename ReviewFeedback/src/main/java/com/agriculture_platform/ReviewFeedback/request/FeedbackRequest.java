@@ -7,22 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class FeedbackRequest {
 
-    private String consultation ;
-    private String comment;
+    private  String id;
+    private String consultationId;
 
-    public String getComment() {
-        return comment;
-    }
-
-    public String getConsultation() {
-        return consultation;
-    }
-
-    public void setConsultation(String consultation) {
-        this.consultation = consultation;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 }
