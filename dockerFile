@@ -1,0 +1,4 @@
+# Dockerfile pour user-service
+FROM openjdk:17-jdk-slim
+COPY target/user-service.jar /app/user-service.jar
+ENTRYPOINT ["java", "-jar", "/app/user-service.jar"]
