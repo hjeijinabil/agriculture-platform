@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    image: eureka-server:latest
+    build:
+      context: ./eureka-server
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - app-network
+
+  api-gateway:
+    image: apigateway:latest
+    build:
+      context: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-server
+    networks:
+      - app-network
+
+  consultation-management:
+    image: consultation-management:latest
+    build:
+      context: ./consultation-management
+    container_name: consultation-management
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+    networks:
+      - app-network
+
+  notification:
+    image: notification-service:latest
+    build:
+      context: ./notification
+    container_name: notification
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+    networks:
+      - app-network
+
+  farm-management:
+    image: farm-management-service:latest
+    build:
+      context: ./farm-management
+    container_name: farm-management
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+    networks:
+      - app-network
+
+  authentication:
+    image: authentication-service:latest
+    build:
+      context: ./authentication
+    container_name: authentication
+    ports:
+      - "8084:8084"
+    depends_on:
+      - eureka-server
+    networks:
+      - app-network
+
+  mailler:
+    image: mailler-service:latest
+    build:
+      context: ./mailler
+    container_name: mailler
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+    networks:
+      - app-network
+
+  review-feedback:
+    image: review-feedback:latest
+    build:
+      context: ./review-feedback
+    container_name: review-feedback
+    ports:
+      - "8086:8086"
+    depends_on:
+      - eureka-server
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

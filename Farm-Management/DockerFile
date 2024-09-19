@@ -1,4 +1,0 @@
-# Dockerfile pour farm-management
-FROM openjdk:17-jdk-slim
-COPY target/farm-management.jar /app/farm-management.jar
-ENTRYPOINT ["java", "-jar", "/app/farm-management.jar"]
