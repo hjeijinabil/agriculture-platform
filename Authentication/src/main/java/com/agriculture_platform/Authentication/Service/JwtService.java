@@ -1,6 +1,5 @@
 package com.agriculture_platform.Authentication.Service;
 
-import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -14,8 +13,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+
 @Service
 public class JwtService {
+    // Méthode pour extraire l'ID utilisateur du token
+    public Long extractUserId(String token) {
+        Claims claims = extractAllClaims(token);
+        return claims.get("id", Long.class);  // Extraire la réclamation 'id'
+    }
 
     private static  final String SECRET_KEY = "121fe02924bd3c482c014caa1bd4591c8ff14f36671e52a9fb411879156cb7ae"; // 256bits Hex
     public String extractUsername(String token) {
@@ -41,7 +46,7 @@ public class JwtService {
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24)) // 24h + 1000mS
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 48)) // 24h + 1000mS
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact(); // generate and return the token
     }

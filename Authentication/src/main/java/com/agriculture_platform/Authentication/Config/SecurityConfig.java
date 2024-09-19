@@ -23,10 +23,11 @@ public class SecurityConfig {
     private CustomSuccessHandler customSuccessHandler;
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
-    @Autowired
-    private JwtAuthentificationFilter jwtAuthFilter;
+
     @Autowired
     private CustomAuthenticationProvider customAuthenticationProvider;
+//    @Autowired
+//    private JwtAuthentificationFilter jwtAuthFilter;
 
 
     @Bean
@@ -44,6 +45,8 @@ public class SecurityConfig {
 
                         .requestMatchers("/users/login").permitAll()
                         .requestMatchers("users/registration").permitAll()
+                        .requestMatchers("users/**").permitAll()
+                        .requestMatchers("/forgotPassword/**").permitAll()
                         .requestMatchers("/users/username/**").permitAll()
                         .anyRequest().authenticated()
                  )// Adjust as needed
@@ -53,17 +56,9 @@ public class SecurityConfig {
                 // like this spring we'll create a new session for every request
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(customAuthenticationProvider);//authenticationProvider original
-     //         .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class) ;// because i want to execute this filter before UsernamePasswordAuthenticationFilter
+//                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class) ;// because i want to execute this filter before UsernamePasswordAuthenticationFilter
 //
-//                .formLogin(form -> form.loginPage("/login").loginProcessingUrl("/login")
-//                        .successHandler(customSuccessHandler).permitAll())
 
-//                .logout(form -> form.invalidateHttpSession(true).clearAuthentication(true)
-//                        .clearAuthentication(true)
-//                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-//                        .logoutSuccessHandler(new CustomLogoutSuccessHandle())
-//                        /*.logoutSuccessUrl("/login?logout")*/
-//                        .permitAll());
 
         return http.build();
 
