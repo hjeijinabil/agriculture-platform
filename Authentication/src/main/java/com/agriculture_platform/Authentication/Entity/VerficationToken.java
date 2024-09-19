@@ -2,6 +2,7 @@ package com.agriculture_platform.Authentication.Entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -11,25 +12,28 @@ public class VerficationToken {
     private Long id;
 
     private String token;
-    private Date expiryDate;
+
+    private LocalDateTime expirationDate;
+
+    // Constructor
+    public VerficationToken(String token) {
+        this.token = token;
+        this.expirationDate = LocalDateTime.now().plusMinutes(5);  // Token expires in 5 minutes
+    }
 
     public VerficationToken() {
 
     }
 
+    public boolean isExpired() {
+        return LocalDateTime.now().isAfter(this.expirationDate);
+    }
 
 
     public Long getId() {
         return id;
     }
 
-    public Date getExpiryDate() {
-        return expiryDate;
-    }
-
-    public void setExpiryDate(Date expiryDate) {
-        this.expiryDate = expiryDate;
-    }
 
     public String getToken() {
         return token;
@@ -44,15 +48,7 @@ public class VerficationToken {
     }
 
 
-    public boolean isExpired() {
-        return new Date().after(expiryDate);
-    }
 
-    public VerficationToken(Date expiryDate) {
-        this.expiryDate = expiryDate;
-    }
 
-    public VerficationToken(String token) {
-        this.token = token;
-    }
+
 }

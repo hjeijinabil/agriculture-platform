@@ -80,21 +80,19 @@ public class ForgotPasswordController {
     public ResponseEntity<?> processResetPassword(@RequestParam String token, @RequestParam String password) {
         VerficationToken resetToken = verificationTokenRepository.findByTokenQuery(token);
         if (resetToken != null) {
+            if (resetToken.isExpired()) {
+                return ResponseEntity.badRequest().body("Reset token is invalid or expired.");
+            }
+
             String username = jwtService.extractUsername(token);
             User user = userService.getUserByEmail(username);
             if (user != null) {
-                // Reset user's password
                 user.setPassword(passwordEncoder.encode(password));
                 userRepository.save(user);
-
-                // Delete the reset token as it's no longer needed
                 verificationTokenRepository.delete(resetToken);
-
-                // Send a success email to the user
-                maillerService.sendEmail(user.getEmail(), "Password Reset Successful", "Your password has been successfully reset.");
-
                 return ResponseEntity.ok("Password reset successfully.");
             }
+
             return ResponseEntity.badRequest().body("Invalid token or user not found.");
         }
 
