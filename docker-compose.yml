@@ -2,99 +2,118 @@ version: '3.8'
 
 services:
   eureka-server:
-    image: eureka-server:latest
     build:
-      context: ./eureka-server
-    container_name: eureka-server
+      context: ./EurekaServer  # Directory where your Eureka Dockerfile is located
+      dockerfile: Dockerfile
     ports:
       - "8761:8761"
     networks:
-      - app-network
-
-  api-gateway:
-    image: apigateway:latest
-    build:
-      context: ./api-gateway
-    container_name: api-gateway
-    ports:
-      - "8080:8080"
-    depends_on:
-      - eureka-server
-    networks:
-      - app-network
+      - my-network
 
   consultation-management:
-    image: consultation-management:latest
     build:
-      context: ./consultation-management
-    container_name: consultation-management
-    ports:
-      - "8081:8081"
-    depends_on:
-      - eureka-server
-    networks:
-      - app-network
-
-  notification:
-    image: notification-service:latest
-    build:
-      context: ./notification
-    container_name: notification
+      context: ./Consulation-Management  # Directory where your consultation management Dockerfile is located
+      dockerfile: Dockerfile
     ports:
       - "8082:8082"
+    networks:
+      - my-network
     depends_on:
       - eureka-server
-    networks:
-      - app-network
+      - mongo
 
-  farm-management:
-    image: farm-management-service:latest
+  notification:
     build:
-      context: ./farm-management
-    container_name: farm-management
+      context: ./Notification  # Directory where your notification Dockerfile is located
+      dockerfile: Dockerfile
     ports:
       - "8083:8083"
+    networks:
+      - my-network
     depends_on:
       - eureka-server
-    networks:
-      - app-network
+      - mongo
 
-  authentication:
-    image: authentication-service:latest
+  mailler-service:
     build:
-      context: ./authentication
-    container_name: authentication
+      context: ./maillerService  # Directory where your mailer service Dockerfile is located
+      dockerfile: Dockerfile
     ports:
-      - "8084:8084"
+      - "8087:8087"
+    networks:
+      - my-network
     depends_on:
       - eureka-server
-    networks:
-      - app-network
+      - mysql
 
-  mailler:
-    image: mailler-service:latest
+  api-gateway:
     build:
-      context: ./mailler
-    container_name: mailler
+      context: ./ApiGateway  # Directory where your ApiGateway Dockerfile is located
+      dockerfile: Dockerfile
     ports:
-      - "8085:8085"
+      - "8080:8080"
+    networks:
+      - my-network
     depends_on:
       - eureka-server
-    networks:
-      - app-network
 
   review-feedback:
-    image: review-feedback:latest
     build:
-      context: ./review-feedback
-    container_name: review-feedback
+      context: ./ReviewFeedback
+      dockerfile: Dockerfile
     ports:
-      - "8086:8086"
+      - "8084:8084"
+    networks:
+      - my-network
     depends_on:
       - eureka-server
+  farm-management:
+    build:
+      context: ./Farm-Management
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
     networks:
-      - app-network
+      - my-network
+    depends_on:
+      - eureka-server
+  authentication:
+    build:
+      context: ./Authentication  # Directory where your authentication Dockerfile is located
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - my-network
+    depends_on:
+      - eureka-server
+      - mysql
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
+    volumes:
+      - mongo-data:/data/db
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: Agricole  # Database name for the mailler service
+      MYSQL_ROOT_PASSWORD: root  # Change this password for production use
+    ports:
+      - "3306:3306"
+    networks:
+      - my-network
+    volumes:
+      - mysql-data:/var/lib/mysql
 
 networks:
-  app-network:
+  my-network:
     driver: bridge
+
+volumes:
+  mongo-data:
+  mysql-data:

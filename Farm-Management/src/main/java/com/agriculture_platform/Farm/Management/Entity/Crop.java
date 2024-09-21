@@ -1,5 +1,7 @@
 package com.agriculture_platform.Farm.Management.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -19,6 +21,8 @@ public class Crop {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "farm_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "crops"})  // Ignore serialization of unnecessary fields
+
     private Farm farm;
 
     // Getters and setters

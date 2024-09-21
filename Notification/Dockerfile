@@ -26,7 +26,7 @@ WORKDIR /app
 COPY --from=build /app/target/Notification-0.0.1-SNAPSHOT.jar ./app.jar
 
 # Expose the port that your Spring Boot application will run on
-EXPOSE 8080
+EXPOSE 8083
 
 # Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]

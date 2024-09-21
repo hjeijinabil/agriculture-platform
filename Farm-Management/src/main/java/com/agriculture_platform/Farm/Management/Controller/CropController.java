@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/api/crops")
 public class CropController {
     @Autowired
     private CropService cropService;
@@ -30,7 +31,15 @@ public class CropController {
             return new ResponseEntity<>(crop, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        }}
+        @GetMapping("/{id}/farm")
+        public ResponseEntity <List <Crop>> getCropByFarmId(@PathVariable Long id) {
+           List <Crop> crop = cropService.getCropByFarmId(id);
+            if (crop != null) {
+                return new ResponseEntity<>(crop, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
     }
 
 

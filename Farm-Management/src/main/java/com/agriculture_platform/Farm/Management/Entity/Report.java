@@ -1,5 +1,7 @@
 package com.agriculture_platform.Farm.Management.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -17,6 +19,7 @@ public class Report {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "farm_id")
+
     private Farm farm;
 
     // Getters and setters

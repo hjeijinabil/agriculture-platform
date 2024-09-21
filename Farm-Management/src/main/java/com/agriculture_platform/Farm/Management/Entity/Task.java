@@ -1,9 +1,6 @@
 package com.agriculture_platform.Farm.Management.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -40,6 +37,10 @@ public class Task {
     }
 
     private Date dueDate ;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "farm_id")
+
+    private Farm farm;
 
     public String getDescription() {
         return description;

@@ -1,5 +1,6 @@
 package com.agriculture_platform.Farm.Management.Service;
 
+import com.agriculture_platform.Farm.Management.Entity.Crop;
 import com.agriculture_platform.Farm.Management.Entity.Report;
 import com.agriculture_platform.Farm.Management.Repository.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,13 @@ public class ReportService {
     @Autowired
     private ReportRepository reportRepository;
 
+
     public Report addReport(Report report) {
         report.setCreatedAt(LocalDateTime.now());
         return reportRepository.save(report);
     }
 
+    public  List<Report> getCropByFarmId(Long farm_id){ return  reportRepository.findByFarmId(farm_id);}
 
 
 

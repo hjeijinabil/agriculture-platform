@@ -40,13 +40,43 @@ public class FarmController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Farm> updateFarm(@PathVariable Long id, @RequestBody Farm farm) {
-        Farm updatedFarm = farmService.updateFarm(id, farm);
-        if (updatedFarm != null) {
-            return new ResponseEntity<>(updatedFarm, HttpStatus.OK);
-        } else {
+        Farm existingFarm = farmService.getFarmById(id);
+        if (existingFarm == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
+        // Update fields
+        if (farm.getFarmerId() != null) {
+            existingFarm.setFarmerId(farm.getFarmerId());
+        }
+        if (farm.getName() != null) {
+            existingFarm.setName(farm.getName());
+        }
+        if (farm.getLocation() != null) {
+            existingFarm.setLocation(farm.getLocation());
+        }
+        if (farm.getSize() != 0) { // Assuming size 0 means not set
+            existingFarm.setSize(farm.getSize());
+        }
+        if (farm.getCropType() != null) {
+            existingFarm.setCropType(farm.getCropType());
+        }
+
+        // Update crops, reports, and tasks as needed, if those fields can be modified directly
+        if (farm.getCrops() != null) {
+            existingFarm.setCrops(farm.getCrops());
+        }
+        if (farm.getReports() != null) {
+            existingFarm.setReports(farm.getReports());
+        }
+        if (farm.getTasks() != null) {
+            existingFarm.setTasks(farm.getTasks());
+        }
+
+        Farm updatedFarm = farmService.addFarm(existingFarm);
+        return new ResponseEntity<>(updatedFarm, HttpStatus.OK);
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFarm(@PathVariable Long id) {

@@ -16,7 +16,7 @@ public class CropService {
     private CropRepository cropRepository;
 
 
-
+public  List<Crop> getCropByFarmId(Long farm_id){ return  cropRepository.findByFarmId(farm_id);}
     public List<Crop> getAllCrops() {
         return cropRepository.findAll();
     }

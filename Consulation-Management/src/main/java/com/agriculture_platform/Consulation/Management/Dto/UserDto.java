@@ -12,15 +12,12 @@ import java.util.Set;
 @Setter
 public class UserDto {
     @Id
-
     private Long id;
-
     private String username;
     private String password;
     private String age;
     private String sex;
     private String email;
-    private UserDto User;
     private String Roles;
 
 
